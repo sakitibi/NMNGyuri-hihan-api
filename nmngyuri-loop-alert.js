@@ -1,10 +1,14 @@
 let nmngyuri = Math.floor(Math.random() * 2);
 let count = 0;
 
-while( count >= 0){
-    count + 1;
-    if (count === 1000){
-        nmngyurialert();
+loop();
+async function loop(){
+    while( count >= 0 ){
+        count + 1;
+        if (count === 1){
+            nmngyurialert();
+        }
+        await sleep(1000);
     }
 }
 
