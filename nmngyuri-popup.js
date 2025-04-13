@@ -1,6 +1,6 @@
 let nmngyuripopup = Math.floor(Math.random() * 1);
 
-if (nmngyuri === 0){
+if (nmngyuripopup === 0){
     popup1();
 }
 
