@@ -56,35 +56,53 @@
     }
 
     // 検索処理
-    function searchUser() {
-      const name = document.getElementById("searchInput").value.trim();
-      const resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = "";
+	function searchUser() {
+	  const keyword = document.getElementById("searchInput").value.trim();
+	  const resultDiv = document.getElementById("result");
+	  resultDiv.innerHTML = "";
+	
+	  let found = false;
+	
+	  for (const category in jsonData) {
+	    for (const id in jsonData[category]) {
+	      const entry = jsonData[category][id];
+	
+	      // 検索対象のフィールド一覧
+	      const fieldsToCheck = [
+	        "username", "friend-code", "network-id", "browser-id", "ipaddress",
+	        "cookie", "Hostname", "UA", "email", "youtube-name", "x-name", "amongus-username"
+	      ];
+	
+	      const match = fieldsToCheck.some(field => {
+	        const value = entry[field];
+	        if (!value) return false;
+	        if (Array.isArray(value)) {
+	          return value.some(v => v && v.includes(keyword));
+	        }
+	        return typeof value === "string" && value.includes(keyword);
+	      });
+	
+	      if (match) {
+	        found = true;
+	        const usernames = Array.isArray(entry.username) ? entry.username.join(", ") : entry.username || "不明";
+	        const riyuu = Array.isArray(entry.riyuu) ? entry.riyuu.join(" / ") : entry.riyuu || "不明";
+	        const taisaku = Array.isArray(entry.taisaku) ? entry.taisaku.join(" / ") : entry.taisaku || "なし";
+	
+	        resultDiv.innerHTML += `
+	          <h3>カテゴリ: ${category}</h3>
+	          <p><strong>ユーザー名:</strong> ${usernames}</p>
+	          <p><strong>理由:</strong> ${riyuu}</p>
+	          <p><strong>対策:</strong> ${taisaku}</p>
+	          <hr>
+	        `;
+	      }
+	    }
+	  }
 
-      let found = false;
-
-      for (const category in jsonData) {
-        for (const id in jsonData[category]) {
-          const entry = jsonData[category][id];
-          const usernames = Array.isArray(entry.username) ? entry.username : [entry.username];
-
-          if (usernames && usernames.some(u => u && u.includes(name))) {
-            found = true;
-            resultDiv.innerHTML += `
-              <h3>カテゴリ: ${category}</h3>
-              <p><strong>ユーザー名:</strong> ${usernames.join(", ")}</p>
-              <p><strong>理由:</strong> ${entry.riyuu || "不明"}</p>
-              <p><strong>対策:</strong> ${entry.taisaku || "なし"}</p>
-              <hr>
-            `;
-          }
-        }
-      }
-
-      if (!found) {
-        resultDiv.innerHTML = "<p>該当するユーザーは見つかりませんでした。</p>";
-      }
-    }
+  if (!found) {
+    resultDiv.innerHTML = "<p>該当する情報は見つかりませんでした。</p>";
+  }
+}
 
     // 初期データ取得
     fetchData();
