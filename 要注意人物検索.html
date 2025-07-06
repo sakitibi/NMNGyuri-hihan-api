@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>要注意人物検索</title>
+  <link rel="shortcut icon" href="https://yt3.googleusercontent.com/X-dQgQR-PcT6QlUk40bm_QuLDvbyBWyUf_6DP5RShb7w666ZW0mzlUlh7DkEehp3av9a3H6M2Jw=s160-c-k-c0x00ffffff-no-rj"/>
+  <style>
+    html{
+      background-color: #21bb5c;
+      text-align: center;
+    }
+
+	button{
+	    padding: 10px 20px;
+	    font-size: 16px;
+	    margin: 10px;
+	    cursor: pointer;
+	    border: none;
+	    border-radius: 5px;
+	    color: #ffffff;
+	    background-color: #002aff;
+	    transition: background-color 0.3s;
+	}
+
+	button:hover{
+	    background-color: #002b9c;
+	}
+
+	button[aria-disabled="true"] {
+	    cursor: not-allowed;
+	    opacity: 0.5;
+	}
+	
+	button:not([aria-disabled]) {
+	    cursor: pointer;
+	}
+	
+	button[disabled] {
+	    cursor: not-allowed;
+	    opacity: 0.5;
+	}
+  </style>
+</head>
+<body>
+  <h1>要注意人物リスト検索</h1>
+  <input type="text" id="searchInput" placeholder="ユーザー名を入力">
+  <button onclick="searchUser()">検索</button>
+  <div id="result"></div>
+  <script>
+    let jsonData = {};
+
+    // JSONを取得
+    async function fetchData() {
+      const response = await fetch("./manifest/youchuuijinbutsulist.json");
+      jsonData = await response.json();
+    }
+
+    // 検索処理
+    function searchUser() {
+      const name = document.getElementById("searchInput").value.trim();
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      let found = false;
+
+      for (const category in jsonData) {
+        for (const id in jsonData[category]) {
+          const entry = jsonData[category][id];
+          const usernames = Array.isArray(entry.username) ? entry.username : [entry.username];
+
+          if (usernames && usernames.some(u => u && u.includes(name))) {
+            found = true;
+            resultDiv.innerHTML += `
+              <h3>カテゴリ: ${category}</h3>
+              <p><strong>ユーザー名:</strong> ${usernames.join(", ")}</p>
+              <p><strong>理由:</strong> ${entry.riyuu || "不明"}</p>
+              <p><strong>対策:</strong> ${entry.taisaku || "なし"}</p>
+              <hr>
+            `;
+          }
+        }
+      }
+
+      if (!found) {
+        resultDiv.innerHTML = "<p>該当するユーザーは見つかりませんでした。</p>";
+      }
+    }
+
+    // 初期データ取得
+    fetchData();
+  </script>
+</body>
+</html>
