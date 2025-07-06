@@ -85,7 +85,7 @@
 	      if (match) {
 	        found = true;
 	        const usernames = Array.isArray(entry.username) ? entry.username.join(", ") : entry.username || "不明";
-		const freindcode = Array.isArray(entry.friend-code) ? entry.friend-code.join(", ") : entry.friend-code || "なし";
+		const friendcode = Array.isArray(entry["friend-code"]) ? entry["friend-code"].join(", ") : entry["friend-code"] || "なし";
 	        const riyuu = Array.isArray(entry.riyuu) ? entry.riyuu.join(" / ") : entry.riyuu || "不明";
 	        const taisaku = Array.isArray(entry.taisaku) ? entry.taisaku.join(" / ") : entry.taisaku || "なし";
 	
