@@ -1,443 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>要注意人物検索</title>
-  <link rel="shortcut icon" href="https://yt3.googleusercontent.com/X-dQgQR-PcT6QlUk40bm_QuLDvbyBWyUf_6DP5RShb7w666ZW0mzlUlh7DkEehp3av9a3H6M2Jw=s160-c-k-c0x00ffffff-no-rj"/>
-  <style>
-    html{
-      background-color: #21bb5c;
-      text-align: center;
-    }
+	<title>要注意人物検索</title>
+	<link rel="shortcut icon" href="https://yt3.googleusercontent.com/X-dQgQR-PcT6QlUk40bm_QuLDvbyBWyUf_6DP5RShb7w666ZW0mzlUlh7DkEehp3av9a3H6M2Jw=s160-c-k-c0x00ffffff-no-rj"/>
+	<style>
+		html{
+		background-color: #21bb5c;
+		text-align: center;
+		}
 
-	button{
-	    padding: 10px 20px;
-	    font-size: 16px;
-	    margin: 10px;
-	    cursor: pointer;
-	    border: none;
-	    border-radius: 5px;
-	    color: #ffffff;
-	    background-color: #002aff;
-	    transition: background-color 0.3s;
-	}
+		button{
+			padding: 10px 20px;
+			font-size: 16px;
+			margin: 10px;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+			color: #ffffff;
+			background-color: #002aff;
+			transition: background-color 0.3s;
+		}
 
-	button:hover{
-	    background-color: #002b9c;
-	}
+		button:hover{
+			background-color: #002b9c;
+		}
 
-	button[aria-disabled="true"] {
-	    cursor: not-allowed;
-	    opacity: 0.5;
-	}
-	
-	button:not([aria-disabled]) {
-	    cursor: pointer;
-	}
-	
-	button[disabled] {
-	    cursor: not-allowed;
-	    opacity: 0.5;
-	}
-  </style>
+		button[aria-disabled="true"] {
+			cursor: not-allowed;
+			opacity: 0.5;
+		}
+		
+		button:not([aria-disabled]) {
+			cursor: pointer;
+		}
+		
+		button[disabled] {
+			cursor: not-allowed;
+			opacity: 0.5;
+		}
+	</style>
 </head>
 <body>
-  <h1>要注意人物リスト検索</h1>
-  <input type="text" id="searchInput" placeholder="ユーザー名を入力">
-  <button onclick="searchUser()">検索</button>
-  <div id="result"></div>
-  <script>
-	const keyMap = {
-	  "warning-list": "qeHPeMqPXS",
-	  "1": "v4lED5U6FE",
-	  "friend-code": "Ki2NMMSEq2",
-	  "username": "gDJhJklU6P",
-	  "2": "XxyTFMrl5S",
-	  "3": "FVlAZ2IMnD",
-	  "4": "QfFIDF351s",
-	  "5": "fZ18FI1GcS",
-	  "network-id": "EynkwezXwp",
-	  "6": "nKxWoTX2qS",
-	  "7": "rPOGKIdZR0",
-	  "8": "srSwL4UTr4",
-	  "9": "r8svtXpfGz",
-	  "10": "CkFnNGZjHy",
-	  "11": "fN6sdYAd5z",
-	  "12": "mAJsjVouLN",
-	  "13": "MSteLN7pBE",
-	  "14": "y83jZ22l8N",
-	  "15": "uNfd9phxaW",
-	  "16": "nd3Vim7ykW",
-	  "email": "3tqADIwP0Q",
-	  "17": "BtvZ3vbASX",
-	  "riyuu": "JTejf7544r",
-	  "danger-list": "FjbCypyyUe",
-	  "browser-id": "Q1RpsoPZdx",
-	  "18": "9kSPQ0ecxc",
-	  "19": "HtbUgEnPkU",
-	  "taisaku": "fuSbvENPix",
-	  "20": "r5LYeflVN5",
-	  "21": "8O82INkXmt",
-	  "22": "2hi9Wi2YT1",
-	  "23": "CXelc0lsf4",
-	  "24": "kDjmoOsXZk",
-	  "25": "rcxRQNbIy4",
-	  "ipaddress": "SBKMAxDYMZ",
-	  "company": "7NSQ5ej4UL",
-	  "cookie": "DL4Tii2m6U",
-	  "Hostname": "U4PlhUJ20O",
-	  "UA": "Ov7o7mVFJV",
-	  "26": "2NsG3xcaal",
-	  "super-danger-list": "tTYh3x2bRs",
-	  "SMS-token": "CwFM8BW2d9",
-	  "country": "U5aFR9i3g5",
-	  "region": "t57Ce12bo5",
-	  "provider": "7j8zjGKILU",
-	  "amongus-username": "DRWGiUyaY0",
-	  "youtube-name": "Ujzf61IaEH",
-	  "blacklist": "D3vCeG0quu",
-	  "x-name": "9IXfbzrnSo",
-	  "hidden": "ajz4thij6Q",
-	  "birthday": "FZVG7qxlzb",
-	  "month": "fViy059FrF",
-	  "date": "R97IqVj4vp"
-	};
-	
-	const valueMap = {
-	  "unknown": "rNBB7Sh2Y6",
-	  "あ": "qT75ndS92f",
-	  "jetbass#5533": "5xrIrwqnnd",
-	  "Poetsleek": "qNxV6w8iA9",
-	  "小学3年生": "Y1Z0AjHCva",
-	  "ゴルシ": "QoCXVAYZm6",
-	  "onlypolka#2844": "MT2PpXkF4b",
-	  "4OVclkhP": "HNn2wBkKMy",
-	  "A": "JNmAa5AqqY",
-	  "scarablate#5401": "oOQqF2KKzP",
-	  "SUSHI": "GwSm4c5tt7",
-	  "chiefbaby#2393": "muV5e3OyOg",
-	  "3HjNoB9s": "4SmLK5EU2h",
-	  "雪大根": "PVCFNgAVAv",
-	  "chewyhusky#4955": "RzDtUqRPOk",
-	  "Reward": "r58GfIQKUw",
-	  "looprimed#8348": "CKHDsl0LdV",
-	  "パンダ好き": "w6f2VCCMbF",
-	  "planktall#9413": "jwUA395jS8",
-	  "焼き鳥": "hc2TVy3ChZ",
-	  "oursilk#3577": "4KXhsKtsz4",
-	  "ボンド": "YeLVqDBWB3",
-	  "wingerleft#5358": "g01Hlje62n",
-	  "あもんぐたのしい": "xvHIgXRysF",
-	  "auntyherby#2848": "c4yqx9WuI7",
-	  "しいたけ": "Z9ADfOVDaN",
-	  "unusedoval#7025": "p4D57qMyFr",
-	  "erawer@awera.com": "HIO5feWyUp",
-	  "a@awerawer.com": "5n4Ai0cfBN",
-	  "awera@a.com": "6SQppjn1Gl",
-	  "mafu.mafu.roboro@gmail.com": "3MnqtW2v5F",
-	  "riceball": "hjxiOHgtaz",
-	  "termsbaggy#3497": "F5t7sSWI4P",
-	  "意味不明な事を言ったから": "B7W7uCLOJ8",
-	  "rrI2L5t": "slkOz2FlZr",
-	  "Gwkt0106": "RRDiFoGvGF",
-	  "FaudalOwl336510": "lTgD8pQHGi",
-	  "56EjqG1Y": "w6kJ0gHbTI",
-	  "kPngazH": "n4fadEqtID",
-	  "3kBfXl81": "S8mg0m4i6j",
-	  "Nevvvd": "5e5avbe7ru",
-	  "ロードプリンス": "qVZswHTcOz",
-	  "中身は初心者": "HM8X62OBjf",
-	  "dapperfire#1991": "M420yBYWXh",
-	  "まさかず": "DlWf7K7tVj",
-	  "firsingle#4189": "ssQjfW4G4R",
-	  "3": "ZUTcLUVtzS",
-	  "loggerfit#1912": "rsubKfX4cV",
-	  "、": "X1XcJcUfZ9",
-	  "voterocky#6996": "mSEVnvt6RW",
-	  "スカニア好き": "DFTD7j05jW",
-	  "投票": "xvhUXDSwfJ",
-	  "snacksworn#7311": "ilJ95zeVb3",
-	  "人外の原石": "9T3UuOtwCQ",
-	  "usedskill#4275": "uarYpBoC8T",
-	  "U5UCSCt": "KnnG7goXHc",
-	  "4sVvHoqQ": "Ofa6bQFPfQ",
-	  "AFN運営委員会": "gPksbUQfUG",
-	  "コメント荒らし": "MY7FgIwqTg",
-	  "ワッサンマッド許さん": "lPqVTEN7oY",
-	  "arrowsnowy#7134": "6Hqv8cTqtT",
-	  "名前は長い方が有利とグル": "8wI9xVHMBR",
-	  "とんかつ味のアソライ": "COyE590TMq",
-	  "ablazetofu#6484": "3CsJE8WM78",
-	  "名前はだいの方が有利": "Z3Zge67r00",
-	  "がまねむ": "cXB5Q7GPXH",
-	  "flitlanded#9228": "TgTJgEw5mc",
-	  "㍌村I鶏煎餅": "lp0jW4Pdzh",
-	  "ミニトマト隊　隊長": "2geJxR7Xm8",
-	  "daichan": "CXx6MTcZdR",
-	  "只今規制中": "IPymkodhqq",
-	  "2t6Avku7": "p5ZL2QVmKg",
-	  "fOWimF8": "LE1lYX6MGN",
-	  "匿名(偽物)": "UE6sbx8aUw",
-	  "なりすまし": "HV38uGDG5g",
-	  "KIREねこ": "Z2cQOQicyc",
-	  "ラムネ様への誹謗中傷": "L4S0lhn9bV",
-	  "WhitePAWA": "lWKgh8Jkae",
-	  "4qIzMvJU": "9CJ3PzMqfT",
-	  "2Ei4IiSz": "jHpA7iwQcG",
-	  "みぞれさんの活動の妨害": "SZBCSuQpxb",
-	  "1OXfPCcI": "ey2S5ttpSB",
-	  "cXdbMOx": "0BNcE73LWg",
-	  "2OTsrFKq": "zijWH1XHu9",
-	  "4388UWFO": "L7lHC1OCf5",
-	  "122.196.202.142": "NHeeFmVLXY",
-	  "マグロのユッケ": "0EEabaeGbG",
-	  "草原急行": "5MvsUAKn5s",
-	  "d1537239810d8b39555cec623d559368c8070b17871": "tfz4nqgMH8",
-	  "zaq7ac4ca8e.rev.zaq.ne.jp": "SIQGpWPes7",
-	  "Chrome Mobile WebView 136.0.7103/Android 14": "Gy4wzieaiY",
-	  "マイ鉄荒らし対策委員会に同一名があった為": "HyoLutO8qx",
-	  "4J20db1l": "44zpgd05SH",
-	  "K9uigye": "A7YHqXYqlt",
-	  "BMR (Bedrock Minecraft Railway)": "YFLqYRrW6p",
-	  "理由：利用規約第20条要注意人物リスト及び指定団体リストに入らない事に違反した為また本人否定確信犯": "e4H2epvK1E",
-	  "vzblh0q": "qKBUTw45ci",
-	  "2EYHDDHF": "1prMTmOQeP",
-	  "4yrbHtev": "Ee56fqXwbf",
-	  "3n7qv8ra": "RQkInjYB4u",
-	  "3gBOywbY": "bbCFoZU4V1",
-	  "4BaNXiVu": "QMmnKYdP7e",
-	  "2oOBjXLQ": "RLshnWSri3",
-	  "4iJoKmwl": "lmNAnjNzi6",
-	  "熟成牛タン": "nBhWSTNfJi",
-	  "秋月": "O5W0M7wBvC",
-	  "高浜電気鉄道": "YoY2If5gE7",
-	  "raWy4ml": "AKdLJ8tibz",
-	  "2A1siZM3": "taOGPuEWEN",
-	  "f735d3f4043164721acb6cd3eef197c4ac055dff8da": "W9Zn2E1U13",
-	  "softbank221044137228.bbtec.net": "qes3wLSMFt",
-	  "221.44.137.228": "aCvdDyUZRl",
-	  "K-Generic_Android-K/Android-10/Chrome Mobile-132.0.0": "PvPPCyYsoc",
-	  "bddcde8c-9f87-4847-ad85-0161ed50c103": "XI24nRMdfQ",
-	  "1GLLCE0B": "j4RgSqgWJZ",
-	  "HTbEfTI": "2O6MrcnHzE",
-	  "1tCyuB2U": "yn967IRbmL",
-	  "カワシマ": "8d1baeXGYu",
-	  "chunkyodds#3153": "beabuPBxZS",
-	  "20uRMcQt": "rnuM5uQ8SX",
-	  "4GY335U1": "WyDgrs7WSO",
-	  "138.201.224.59": "Mft47rPxnl",
-	  "e10ca098423f1bfcfee380d36f6d82123a22828f038": "Gnsayxckmu",
-	  "static.59.224.201.138.clients.your-server.de": "LwbxKtBBzI",
-	  "Chrome 119.0.0/Windows 10": "BqsI7E05nu",
-	  "🇩🇪ドイツ": "HFGlKV3KBh",
-	  "ザクセン": "dT2BXVk50b",
-	  "Hetzner Online GmbH": "RfE6M7cCBd",
-	  "名前は猫の方が有利": "l6uff3yyvX",
-	  "fineown#3933": "3LXBVXtE6U",
-	  "九尾": "DRVxzSa1cy",
-	  "blaseshape#4922": "I0oE1vtpMr",
-	  "ゆどうふ": "SQ0xjxdbNW",
-	  "多方面への悪口": "djmoarnGDn",
-	  "牛3円偽": "n6hRAQ9ebt",
-	  "匿名のDiscordでの荒らし": "G0F6f1f3qD",
-	  "インポスター引きたい": "9KiLq6WVOS",
-	  "likerain#0448": "xe6yUSZA1d",
-	  "不明": "zDaZAFNLYO",
-	  "kellelhome#1482": "EjB8l2Rtsa",
-	  "いちごミルクの素": "yaekJorGzS",
-	  "galajokey#3559": "4zIH9aTnaE",
-	  "2TO9gM3a": "DkxzNmXa1d",
-	  "3iQ21BGA": "kjAlITO4Sj",
-	  "153.242.253.143": "hiJgdGOds6",
-	  "36480e41595a33739e9e0e27d6b618ff4d3f91344bc": "PA1pnRMvT2",
-	  "p896144-ipoe.ipoe.ocn.ne.jp": "QqbO1BsHpO",
-	  "Mobile Safari 15.6.6/iOS 15.8.3": "NtkeBfYeBP",
-	  "wikiページ荒らし": "kALWezTSqG",
-	  "しおん(紫音ちゃんじゃない方)": "T6JlCdUNQB",
-	  "unlinedyea#3406": "R1qVHdVrap",
-	  "lowergoody#2833": "yrVJqvCxqY",
-	  "1p6LXgw3": "0oBDO5vJgj",
-	  "3cXGwELF": "MkzHcrhrCH",
-	  "14.9.86.64": "Qtu4anQdRA",
-	  "M014009086064.v4.enabler.ne.jp": "t7ToyyELBG",
-	  "8f408a2cabb2c21ce69103d2df32153edbad2c070f3": "0rkHXUkoNQ",
-	  "Chrome 137.0.0/Windows 10": "HBXMYN9yuY",
-	  "2f044389-7cb8-414c-9fde-d141c9df70da": "TkIr5WUA2L",
-	  "青森県八戸市": "tGq7E86UnI",
-	  "日本ネットワークイネイブラー株式会社": "FRPBi0Q5L5",
-	  "大規模なWikiページ荒らし": "MCMM7pv0Am",
-	  "名前は長い方が有利": "XUGzjskUoX",
-	  "ourluck#4319": "ADkHOXfyXt",
-	  "名前は長い方が有利🐦": "sbIi79OLgj",
-	  "12ninstudio様&ラムネ様が部屋に入った際、あらぬ疑いをかけ部屋から追放した上に、視聴者が悪口を言い、雰囲気が良くないため\nまた、この雰囲気を改善しようとしない、複数人に対して冤罪をかけているが反省の色が見えない": "VmQg9TSFf3",
-	  "全面戦争する": "ixDlj7DIqT",
-	  "法的措置を取る": "IAK7J8wm35",
-	  "カービィ大好き!": "Ar4Ym3mzaR",
-	  "過度な概要欄要求": "Qcc0YYRqGY",
-	  "ウォーターチャレンジ": "0Z3mIREEPt",
-	  "すまない先生": "cjTXEAOMPF",
-	  "04": "5BMKZvVo23",
-	  "21": "LhF2tZnRO4",
-	  "ミスター赤ちゃん": "QPqgyI4Qdw",
-	  "ミスター銀さん": "Z3z70kKmXF",
-	  "ミスターバナナ": "HXlK2n25VC",
-	  "ミスターマネー": "TUNXE342e9",
-	  "ミスターブルー": "EHpLtoirNQ",
-	  "ミスターレッド": "hkdbmy68cY",
-	  "ミスターブラック": "RgSfFtdYrF",
-	  "3TpPOgru": "OsD6CCR0pi",
-	  "4ukSGQzf": "PLgn618Sxi",
-	  "122.135.139.195": "ZNjuxfaSJi",
-	  "8e4dd215b144ad1083ef9cd95ebd7889b85d00298e9": "nmgsjJ9lEE",
-	  "FL1-122-135-139-195.hyg.mesh.ad.jp": "3e5tc0GLUI",
-	  "Opera 117.0.0/Windows 10": "40fqZ6Hd5C",
-	  "153HUhxM": "95kRh55Kqt",
-	  "1grkU4Xh": "uzUrUl6pVO",
-	  "14.9.13.224": "4Di9wzj4VB",
-	  "9ffdbf6d43b80e6d410970357f1aa255d7be9437d9d": "ovJ27EyGJX",
-	  "M014009013224.v4.enabler.ne.jp": "1YtV8DDWHF",
-	  "Chrome 134.0.0/Chrome OS 14541.0.0": "5IzNgyQkjt",
-	  "3kcX4O48": "fbJAIejYMv",
-	  "4gCaAGBy": "zlsZ6IFaB2",
-	  "60.94.79.163": "y4kvjJJrGv",
-	  "d2ff5fe6ff226e63f277b056d4337dee1674b653953": "TpqrfBKrMG",
-	  "softbank060094079163.bbtec.net": "odrIybMzIV",
-	  "Mobile Safari 18.3.1/iOS 18.3.2": "N8qkmEIvr5",
-	  "2YUi8xLu": "S9q5EnWDTs",
-	  "GgiSWKH": "fV3JWkJrvs",
-	  "111.188.188.186": "cbsbTBjLc4",
-	  "815c46f002f31c5b9fcd9fd6225acdcd63cd9ab2107": "APyIhKFlkT",
-	  "softbank111188188186.bbtec.net": "9XhEv3TBPj",
-	  "LINE 15.2.1/Android 15": "CVHsIsvocO",
-	  "SkTMFGv": "ehsRnwRC6C",
-	  "1tpzypoC": "UeN6sac27O",
-	  "124.18.233.93": "J1LnlYwAQA",
-	  "d92e5b49e5f3c8e414fcdad83158f0e35f773cfb864": "ONh9TziH6B",
-	  "124-18-233-93.area56a.commufa.jp": "J7JGuIMzsc",
-	  "Chrome 134.0.0/Windows 10": "Md76PUl5cg",
-	  "4W56iEyZ": "WfOqp9GIYf",
-	  "2OYvXuyC": "Tigs1kjaw4",
-	  "118.7.71.129": "YeoDPjj0SN",
-	  "caecc6e75af52f8fc61994edca8ea5356784958724f": "2MwwjK8oZn",
-	  "p1738130-ipoe.ipoe.ocn.ne.jp": "ttoImhEOkJ",
-	  "LINE 15.2.3/iOS 18.3.1": "34DNK6leiH",
-	  "4QbUlJdQ": "VAewONA5Cj",
-	  "4gqjJxEd": "Gp4QjvtEsR",
-	  "49.109.163.33": "4tV3iVuIHJ",
-	  "5493b91665d2f72289a4d2d0af144e266a43085b3dc": "nlBuhhhFHv",
-	  "sp49-109-163-33.tck02.spmode.ne.jp": "fH7byeUTYB",
-	  "Chrome Mobile 134.0.0/Android 10": "mEVDKYzVxG",
-	  "fa203b43952a869ceb953c7d4edcd833511b0bce91a": "JeHFM4zh6i",
-	  "Chrome 133.0.0/Chrome OS 14541.0.0": "Tj7Hx71xqk",
-	  "180.20.39.172": "tW0p1jP8tl",
-	  "p13207172-ipxg46001marunouchi.tokyo.ocn.ne.jp": "dPtH7AWiVz",
-	  "L2svhr7": "NxQLG6L1SA",
-	  "143.189.209.108": "xmAJ3A6Unm",
-	  "fs8fbdd16c.tkyc002.ap.nuro.jp": "qpVTWxMuzF",
-	  "219.104.135.53": "th930Cnsrh",
-	  "94830debb30941f4a1c3b58c249be0ddfd2a7671ed1": "tXZc7SVcYy",
-	  "madb688735.ap.nuro.jp": "pyssjczsLR",
-	  "Windows-10/Edge-135.0.0": "R0QaTEGGQg",
-	  "118.241.250.176": "CR7ZdS2CXy",
-	  "mp76f1fab0.ap.nuro.jp": "VotNzbfGm2",
-	  "Windows-10 / Edge-135.0.0": "OVI1sDjJAm",
-	  "211.132.93.141": "hAeTqdY0Rq",
-	  "619e8fac852e3f78601af7a8eace0cf1ca33e569854": "tAeOT2D40C",
-	  "opt-211-132-93-141.client.pikara.ne.jp": "5w2Zx4I9rF",
-	  "iPhone-Apple-iPhone / iOS-17.6.1 / Google-367.0.752095380": "QtYBRUzONH",
-	  "D6zol7r": "jvnh3nZo7k",
-	  "4LrRpffy": "HckUILqbmo",
-	  "126.219.88.117": "piCxnjrokV",
-	  "d28875fb5f0add7c5d9cf922d5d9d9bed12cfc5f333": "9npLv0eADz",
-	  "softbank126219088117.bbtec.net": "DkLa4Hng4C",
-	  "Safari 18.3/Mac OS X 10.15.7": "IORiH3TVOJ",
-	  "118.9.16.2": "lsbZqJT9SN",
-	  "ee6219bb1b6ddc1bb05763b766a376e9445de43aab7": "H21fTDALc5",
-	  "p2131003-ipoe.ipoe.ocn.ne.jp": "QSVIn3kWOH",
-	  "Windows-10 / Firefox-139.0": "JrWGln8tlb"
-	};
-	
-	const reverseKeyMap = Object.fromEntries(Object.entries(keyMap).map(([k, v]) => [v, k]));
-	const reverseValueMap = Object.fromEntries(Object.entries(valueMap).map(([k, v]) => [v, k]));
-	
-	function deobfuscate(obj) {
-	  if (Array.isArray(obj)) {
-	    return obj.map(deobfuscate);
-	  } else if (typeof obj === 'object' && obj !== null) {
-	    const result = {};
-	    for (const [k, v] of Object.entries(obj)) {
-	      const originalKey = reverseKeyMap[k] || k;
-	      result[originalKey] = deobfuscate(v);
-	    }
-	    return result;
-	  } else if (typeof obj === 'string') {
-	    return reverseValueMap[obj] || obj;
-	  } else {
-	    return obj;
-	  }
-	}
-	
-	async function fetchData() {
-	  const response = await fetch("./manifest/youchuuijinbutsulist.json");
-	  const obfuscated = await response.json();
-	  jsonData = deobfuscate(obfuscated);
-	}
-
-    // 検索処理
-	function searchUser() {
-	  const keyword = document.getElementById("searchInput").value.trim();
-	  const resultDiv = document.getElementById("result");
-	  resultDiv.innerHTML = "";
-	
-	  let found = false;
-	
-	  for (const category in jsonData) {
-	    for (const id in jsonData[category]) {
-	      const entry = jsonData[category][id];
-	
-	      // 検索対象のフィールド一覧
-	      const fieldsToCheck = [
-	        "username", "friend-code", "network-id", "browser-id", "ipaddress",
-	        "cookie", "Hostname", "UA", "email", "youtube-name", "x-name", "amongus-username"
-	      ];
-	
-	      const match = fieldsToCheck.some(field => {
-	        const value = entry[field];
-	        if (!value) return false;
-	        if (Array.isArray(value)) {
-	          return value.some(v => v && v.includes(keyword));
-	        }
-	        return typeof value === "string" && value.includes(keyword);
-	      });
-	
-	      if (match) {
-	        found = true;
-	        const usernames = Array.isArray(entry.username) ? entry.username.join(", ") : entry.username || "不明";
-		const friendcode = Array.isArray(entry["friend-code"]) ? entry["friend-code"].join(", ") : entry["friend-code"] || "なし";
-		const email = Array.isArray(entry.email) ? entry.email.join(", ") : entry.email || "なし";
-	        const riyuu = Array.isArray(entry.riyuu) ? entry.riyuu.join(" / ") : entry.riyuu || "不明";
-	        const taisaku = Array.isArray(entry.taisaku) ? entry.taisaku.join(" / ") : entry.taisaku || "なし";
-	
-	        resultDiv.innerHTML += `
-	          <h3>カテゴリ: ${category}</h3>
-	          <p><strong>ユーザー名:</strong> ${usernames}</p>
-	   	  <p><strong>フレンドコード:</strong> ${friendcode}</p>
-       		  <p><strong>メールアドレス:</strong> ${email}</p>
-	          <p><strong>理由:</strong> ${riyuu}</p>
-	          <p><strong>対策:</strong> ${taisaku}</p>
-	          <hr>
-	        `;
-	      }
-	    }
-	  }
-	
-	  if (!found) {
-	    resultDiv.innerHTML = "<p>該当する情報は見つかりませんでした。</p>";
-	  }
-	}
-
-    // 初期データ取得
-    fetchData();
-  </script>
+	<h1>要注意人物リスト検索</h1>
+	<input type="text" id="searchInput" placeholder="ユーザー名を入力">
+	<button onclick="searchUser()">検索</button>
+	<div id="result"></div>
+	<script src="/elibrary-api/js/e8591b98-4e13-1bea-125d-f567346a0b12.js"></script>
 </body>
 </html>
