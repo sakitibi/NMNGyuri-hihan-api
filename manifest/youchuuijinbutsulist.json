@@ -1,0 +1,495 @@
+{
+    "warning-list": {
+        "1": {
+            "friend-code": "unknown",
+            "username": "あ"
+        },
+        "2": {
+            "friend-code": "jetbass#5533",
+            "username": "Poetsleek"
+        },
+        "3": {
+            "username": "小学3年生"
+        },
+        "4": {
+            "username": "ゴルシ",
+            "friend-code": "onlypolka#2844"
+        },
+        "5": {
+            "network-id": "4OVclkhP"
+        },
+        "6": {
+            "username": "A",
+            "friend-code": "scarablate#5401"
+        },
+        "7": {
+            "username": "SUSHI",
+            "friend-code": "chiefbaby#2393"
+        },
+        "8": {
+            "network-id": "3HjNoB9s"
+        },
+        "9": {
+            "username": "雪大根",
+            "friend-code": "chewyhusky#4955"
+        },
+        "10": {
+            "username": "Reward",
+            "friend-code": "looprimed#8348"
+        },
+        "11": {
+            "username": "パンダ好き",
+            "friend-code": "planktall#9413"
+        },
+        "12": {
+            "username": "焼き鳥",
+            "friend-code": "oursilk#3577"
+        },
+        "13": {
+            "username": "ボンド",
+            "friend-code": "wingerleft#5358"
+        },
+        "14": {
+            "username": "あもんぐたのしい",
+            "friend-code": "auntyherby#2848"
+        },
+        "15": {
+            "username": "しいたけ",
+            "friend-code": "unusedoval#7025"
+        },
+        "16": {
+            "email": [
+                "erawer@awera.com",
+                "a@awerawer.com",
+                "awera@a.com",
+                "mafu.mafu.roboro@gmail.com"
+            ]
+        },
+        "17": {
+            "username": "riceball",
+            "friend-code": "termsbaggy#3497",
+            "riyuu": "意味不明な事を言ったから"
+        }
+    },
+    "danger-list": {
+        "1": {
+            "network-id": "rrI2L5t",
+            "username": [
+                "Gwkt0106",
+                "FaudalOwl336510"
+            ]
+        },
+        "2": {
+            "network-id": "56EjqG1Y"
+        },
+        "3": {
+            "network-id": "kPngazH"
+        },
+        "4": {
+            "network-id": "3kBfXl81"
+        },
+        "5": {
+            "username": [
+                "Nevvvd",
+                "ロードプリンス"
+            ]
+        },
+        "6": {
+            "username": "中身は初心者",
+            "friend-code": "dapperfire#1991"
+        },
+        "7": {
+            "username": "まさかず",
+            "friend-code": "firsingle#4189"
+        },
+        "8": {
+            "username": "3",
+            "friend-code": "loggerfit#1912"
+        },
+        "9": {
+            "username": "、",
+            "friend-code": "voterocky#6996"
+        },
+        "10": {
+            "username": [
+                "スカニア好き",
+                "投票"
+            ],
+            "friend-code": "snacksworn#7311"
+        },
+        "11": {
+            "username": "人外の原石",
+            "friend-code": "usedskill#4275"
+        },
+        "12": {
+            "network-id": "U5UCSCt",
+            "browser-id": "4sVvHoqQ",
+            "username": "AFN運営委員会",
+            "riyuu": "コメント荒らし"
+        },
+        "13": {
+            "username": "ワッサンマッド許さん",
+            "friend-code": "arrowsnowy#7134",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "14": {
+            "username": "とんかつ味のアソライ",
+            "friend-code": "ablazetofu#6484",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "15": {
+            "username": "名前はだいの方が有利",
+            "friend-code": "unknown",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "16": {
+            "username": "がまねむ",
+            "friend-code": "flitlanded#9228",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "17": {
+            "username": "㍌村I鶏煎餅",
+            "friend-code": "unknown",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "18": {
+            "username": "ミニトマト隊　隊長",
+            "friend-code": "unknown",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "19": {
+            "username": "daichan",
+            "friend-code": "unknown",
+            "riyuu": "名前は長い方が有利とグル",
+            "taisaku": "只今規制中"
+        },
+        "20": {
+            "network-id": "2t6Avku7",
+            "browser-id": "fOWimF8",
+            "username": "匿名(偽物)",
+            "riyuu": "なりすまし"
+        },
+        "21": {
+            "username": "KIREねこ",
+            "friend-code": "unknown",
+            "riyuu": "ラムネ様への誹謗中傷"
+        },
+        "22": {
+            "username": "WhitePAWA",
+            "friend-code": "unknown",
+            "riyuu": "ラムネ様への誹謗中傷"
+        },
+        "23": {
+            "network-id": "4qIzMvJU",
+            "browser-id": "2Ei4IiSz",
+            "riyuu": "みぞれさんの活動の妨害"
+        },
+        "24": {
+            "network-id": "1OXfPCcI",
+            "browser-id": "cXdbMOx",
+            "riyuu": "みぞれさんの活動の妨害"
+        },
+        "25": {
+            "network-id": "2OTsrFKq",
+            "browser-id": "4388UWFO",
+            "ipaddress": "122.196.202.142",
+            "username": "マグロのユッケ",
+            "company": "草原急行",
+            "cookie": "d1537239810d8b39555cec623d559368c8070b17871",
+            "Hostname": "zaq7ac4ca8e.rev.zaq.ne.jp",
+            "UA": "Chrome Mobile WebView 136.0.7103/Android 14",
+            "riyuu": "マイ鉄荒らし対策委員会に同一名があった為"
+        },
+        "26": {
+            "network-id": "4J20db1l",
+            "browser-id": "K9uigye",
+            "username": "BMR (Bedrock Minecraft Railway)",
+            "riyuu": "理由：利用規約第20条要注意人物リスト及び指定団体リストに入らない事に違反した為また本人否定確信犯"
+        }
+    },
+    "super-danger-list": {
+        "1": {
+            "network-id": [
+                "vzblh0q",
+                "2EYHDDHF",
+                "4yrbHtev",
+                "3n7qv8ra"
+            ],
+            "browser-id": [
+                "3gBOywbY",
+                "4BaNXiVu",
+                "2oOBjXLQ",
+                "4iJoKmwl"
+            ],
+            "username": [
+                "熟成牛タン",
+                "秋月"
+            ],
+            "company": "高浜電気鉄道"
+        },
+        "2": {
+            "network-id": "raWy4ml",
+            "browser-id": "2A1siZM3",
+            "cookie": "f735d3f4043164721acb6cd3eef197c4ac055dff8da",
+            "Hostname": "softbank221044137228.bbtec.net",
+            "ipaddress": "221.44.137.228",
+            "UA": "K-Generic_Android-K/Android-10/Chrome Mobile-132.0.0",
+            "SMS-token": "bddcde8c-9f87-4847-ad85-0161ed50c103"
+        },
+        "3": {
+            "network-id": [
+                "1GLLCE0B",
+                "HTbEfTI"
+            ],
+            "browser-id": "1tCyuB2U"
+        },
+        "4": {
+            "username": "カワシマ",
+            "friend-code": "chunkyodds#3153"
+        },
+        "5": {
+            "network-id": "20uRMcQt",
+            "browser-id": "4GY335U1",
+            "ipaddress": "138.201.224.59",
+            "cookie": "e10ca098423f1bfcfee380d36f6d82123a22828f038",
+            "Hostname": "static.59.224.201.138.clients.your-server.de",
+            "UA": "Chrome 119.0.0/Windows 10",
+            "country": "🇩🇪ドイツ",
+            "region": "ザクセン",
+            "provider": "Hetzner Online GmbH"
+        },
+        "6": {
+            "username": "名前は猫の方が有利",
+            "friend-code": "fineown#3933",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "7": {
+            "amongus-username": "九尾",
+            "friend-code": "blaseshape#4922",
+            "youtube-name": "九尾",
+            "riyuu": [
+                "名前は長い方が有利とグル",
+                "ラムネ様への誹謗中傷"
+            ]
+        },
+        "8": {
+            "username": "ゆどうふ",
+            "friend-code": "arrowsnowy#7134",
+            "riyuu": [
+                "名前は長い方が有利とグル",
+                "多方面への悪口"
+            ]
+        },
+        "9": {
+            "username": "牛3円偽",
+            "friend-code": "unknown",
+            "riyuu": "匿名のDiscordでの荒らし"
+        },
+        "10": {
+            "username": "インポスター引きたい",
+            "friend-code": "likerain#0448",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "11": {
+            "username": "不明",
+            "friend-code": "kellelhome#1482",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "12": {
+            "username": "いちごミルクの素",
+            "friend-code": "galajokey#3559",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "13": {
+            "network-id": "2TO9gM3a",
+            "browser-id": "3iQ21BGA",
+            "ipaddress": "153.242.253.143",
+            "cookie": "36480e41595a33739e9e0e27d6b618ff4d3f91344bc",
+            "Hostname": "p896144-ipoe.ipoe.ocn.ne.jp",
+            "UA": "Mobile Safari 15.6.6/iOS 15.8.3",
+            "riyuu": "wikiページ荒らし"
+        },
+        "14": {
+            "username": "しおん(紫音ちゃんじゃない方)",
+            "friend-code": "unlinedyea#3406",
+            "riyuu": [
+                "名前は長い方が有利とグル",
+                "ラムネ様への誹謗中傷"
+            ]
+        },
+        "15": {
+            "username": "unknown",
+            "friend-code": "lowergoody#2833",
+            "riyuu": "名前は長い方が有利とグル"
+        },
+        "16": {
+            "network-id": "1p6LXgw3",
+            "browser-id": "3cXGwELF",
+            "ipaddress": "14.9.86.64",
+            "Hostname": "M014009086064.v4.enabler.ne.jp",
+            "cookie": "8f408a2cabb2c21ce69103d2df32153edbad2c070f3",
+            "UA": "Chrome 137.0.0/Windows 10",
+            "SMS-token": "2f044389-7cb8-414c-9fde-d141c9df70da",
+            "region": "青森県八戸市",
+            "provider": "日本ネットワークイネイブラー株式会社",
+            "riyuu": "大規模なWikiページ荒らし"
+        }
+    },
+    "blacklist": {
+        "1": {
+            "username": "名前は長い方が有利",
+            "friend-code": "ourluck#4319",
+            "youtube-name": "名前は長い方が有利",
+            "x-name": "名前は長い方が有利🐦",
+            "riyuu": "12ninstudio様&ラムネ様が部屋に入った際、あらぬ疑いをかけ部屋から追放した上に、視聴者が悪口を言い、雰囲気が良くないため\nまた、この雰囲気を改善しようとしない、複数人に対して冤罪をかけているが反省の色が見えない",
+            "taisaku": [
+                "全面戦争する",
+                "法的措置を取る"
+            ]
+        },
+        "2": {
+            "username": "カービィ大好き!",
+            "friend-code": "unknown",
+            "riyuu": [
+                "名前は長い方が有利とグル",
+                "過度な概要欄要求"
+            ]
+        }
+    },
+    "hidden": {
+        "1": {
+            "username": [
+                "ウォーターチャレンジ",
+                "すまない先生"
+            ],
+            "birthday": {
+                "month": "04",
+                "date": "21"
+            }
+        },
+        "2": {
+            "username": "ミスター赤ちゃん"
+        },
+        "3": {
+            "username": "ミスター銀さん"
+        },
+        "4": {
+            "username": "ミスターバナナ"
+        },
+        "5": {
+            "username": "ミスターマネー"
+        },
+        "6": {
+            "username": "ミスターブルー"
+        },
+        "7": {
+            "username": "ミスターレッド"
+        },
+        "8": {
+            "username": "ミスターブラック"
+        },
+        "9": {
+            "network-id": "3TpPOgru",
+            "browser-id": "4ukSGQzf",
+            "ipaddress": "122.135.139.195",
+            "cookie": "8e4dd215b144ad1083ef9cd95ebd7889b85d00298e9",
+            "Hostname": "FL1-122-135-139-195.hyg.mesh.ad.jp",
+            "UA": "Opera 117.0.0/Windows 10"
+        },
+        "10": {
+            "network-id": "153HUhxM",
+            "browser-id": "1grkU4Xh",
+            "ipaddress": "14.9.13.224",
+            "cookie": "9ffdbf6d43b80e6d410970357f1aa255d7be9437d9d",
+            "Hostname": "M014009013224.v4.enabler.ne.jp",
+            "UA": "Chrome 134.0.0/Chrome OS 14541.0.0"
+        },
+        "11": {
+            "network-id": "3kcX4O48",
+            "browser-id": "4gCaAGBy",
+            "ipaddress": "60.94.79.163",
+            "cookie": "d2ff5fe6ff226e63f277b056d4337dee1674b653953",
+            "Hostname": "softbank060094079163.bbtec.net",
+            "UA": "Mobile Safari 18.3.1/iOS 18.3.2"
+        },
+        "12": {
+            "network-id": "2YUi8xLu",
+            "browser-id": "GgiSWKH",
+            "ipaddress": "111.188.188.186",
+            "cookie": "815c46f002f31c5b9fcd9fd6225acdcd63cd9ab2107",
+            "Hostname": "softbank111188188186.bbtec.net",
+            "UA": "LINE 15.2.1/Android 15"
+        },
+        "13": {
+            "network-id": "SkTMFGv",
+            "browser-id": "1tpzypoC",
+            "ipaddress": "124.18.233.93",
+            "cookie": "d92e5b49e5f3c8e414fcdad83158f0e35f773cfb864",
+            "Hostname": "124-18-233-93.area56a.commufa.jp",
+            "UA": "Chrome 134.0.0/Windows 10"
+        },
+        "14": {
+            "network-id": "4W56iEyZ",
+            "browser-id": "2OYvXuyC",
+            "ipaddress": "118.7.71.129",
+            "cookie": "caecc6e75af52f8fc61994edca8ea5356784958724f",
+            "Hostname": "p1738130-ipoe.ipoe.ocn.ne.jp",
+            "UA": "LINE 15.2.3/iOS 18.3.1"
+        },
+        "15": {
+            "network-id": "4QbUlJdQ",
+            "browser-id": "4gqjJxEd",
+            "ipaddress": "49.109.163.33",
+            "cookie": "5493b91665d2f72289a4d2d0af144e266a43085b3dc",
+            "Hostname": "sp49-109-163-33.tck02.spmode.ne.jp",
+            "UA": "Chrome Mobile 134.0.0/Android 10"
+        },
+        "16": {
+            "browser-id": "4sVvHoqQ",
+            "cookie": "fa203b43952a869ceb953c7d4edcd833511b0bce91a",
+            "UA": "Chrome 133.0.0/Chrome OS 14541.0.0",
+            "1": {
+                "network-id": "U5UCSCt",
+                "ipaddress": "180.20.39.172",
+                "Hostname": "p13207172-ipxg46001marunouchi.tokyo.ocn.ne.jp"
+            },
+            "2": {
+                "network-id": "L2svhr7",
+                "ipaddress": "143.189.209.108",
+                "Hostname": "fs8fbdd16c.tkyc002.ap.nuro.jp"
+            }
+        },
+        "17": {
+            "ipaddress": "219.104.135.53",
+            "cookie": "94830debb30941f4a1c3b58c249be0ddfd2a7671ed1",
+            "Hostname": "madb688735.ap.nuro.jp",
+            "UA": "Windows-10/Edge-135.0.0"
+        },
+        "18": {
+            "ipaddress": "118.241.250.176",
+            "cookie": "94830debb30941f4a1c3b58c249be0ddfd2a7671ed1",
+            "Hostname": "mp76f1fab0.ap.nuro.jp",
+            "UA": "Windows-10 / Edge-135.0.0"
+        },
+        "19": {
+            "ipaddress": "211.132.93.141",
+            "cookie": "619e8fac852e3f78601af7a8eace0cf1ca33e569854",
+            "Hostname": "opt-211-132-93-141.client.pikara.ne.jp",
+            "UA": "iPhone-Apple-iPhone / iOS-17.6.1 / Google-367.0.752095380"
+        },
+        "20": {
+            "network-id": "D6zol7r",
+            "browser-id": "4LrRpffy",
+            "ipaddress": "126.219.88.117",
+            "cookie": "d28875fb5f0add7c5d9cf922d5d9d9bed12cfc5f333",
+            "Hostname": "softbank126219088117.bbtec.net",
+            "UA": "Safari 18.3/Mac OS X 10.15.7"
+        },
+        "21": {
+            "ipaddress": "118.9.16.2",
+            "cookie": "ee6219bb1b6ddc1bb05763b766a376e9445de43aab7",
+            "Hostname": "p2131003-ipoe.ipoe.ocn.ne.jp",
+            "UA": "Windows-10 / Firefox-139.0"
+        }
+    }
+}
