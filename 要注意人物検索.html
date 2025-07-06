@@ -378,7 +378,7 @@
 	}
 	
 	async function fetchData() {
-	  const response = await fetch("./manifest/youchuuijinbutsulist_obfuscated.json");
+	  const response = await fetch("./manifest/youchuuijinbutsulist.json");
 	  const obfuscated = await response.json();
 	  jsonData = deobfuscate(obfuscated);
 	}
