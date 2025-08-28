@@ -60,6 +60,14 @@ function NMNGyuriAlertMain(){
             border-color: #4cae4c;
             color: #fff;
         }
+        .sms-form .button-container .submit-btn, .sms-form button.close-modal {
+            border-radius: 5px;
+            border-style: solid;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+            padding: 4px 10px;
+            width: 16rem;
+        }
     `);
     document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
