@@ -67,6 +67,6 @@ function NMNGyuriAlertMain(){
 }
 
 setInterval(() => {
-  nmngyuriloopalert = Math.floor(Math.random() * 4);
-  nmngyuriloopalertfunc();
+  nmngyurialert = Math.floor(Math.random() * 4);
+  NMNGyuriAlertMain();
 }, 150000);
