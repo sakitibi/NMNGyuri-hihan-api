@@ -1,18 +1,70 @@
-let nmngyuriloopalert = Math.floor(Math.random() * 4);
+let nmngyurialert = Math.floor(Math.random() * 4);
+let nmngyuritext = null;
 
-function nmngyuriloopalertfunc(){
-  if (nmngyuriloopalert === 0){
-    alert("名前は長い方が有利戦争の応戦にご協力をお願い致します。");
-  } else if (nmngyuriloopalert === 1) {
-      alert("名前は長い方が有利反対にご協力をお願い致します。");
-  } else if (nmngyuriloopalert === 2) {
-      alert("名前は長い方が有利は悪質な荒らしです、\n撲滅にご協力をお願い致します");
-  } else if (nmngyuriloopalert === 3){
-      alert("名前は長い方が有利は登録者を買っています\n今すぐ通報して下さい");
-  }
+if (nmngyurialert === 0){
+    nmngyuritext = "名前は長い方が有利戦争の応戦にご協力をお願い致します。";
+} else if (nmngyurialert === 1) {
+    nmngyuritext = "名前は長い方が有利反対にご協力をお願い致します。";
+} else if (nmngyurialert === 2) {
+    nmngyuritext = "名前は長い方が有利は悪質な荒らしです、\n撲滅にご協力をお願い致します";
+} else if (nmngyurialert === 3){
+    nmngyuritext = "名前は長い方が有利は登録者を買っています\n今すぐ通報して下さい";
 }
+NMNGyuriAlertMain();
 
-nmngyuriloopalertfunc();
+function NMNGyuriAlertMain(){
+    const container = document.createElement("div");
+    container.classList.add("sms-auth-modal-overlay", "sms-auth-modal-overlay--after-open");
+    document.body.appendChild(container);
+    Object.assign(container.style, {
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        zIndex: 999999
+    });
+    container.innerHTML = (`
+        <div id="sms-container" style="vertical-align: middle; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); z-index: 999999; max-width: 500px; box-sizing: border-box; width: 90%; background: rgb(255, 255, 255); padding: 0px; border: none; border-radius: 8px; box-shadow: rgb(0, 0, 0) 0px 0px 10px; text-align: left;">
+            <div class="sms-form">
+                <h3 class="modal-title"></h3>
+                <button class="submit-btn secondary">同意する</button>
+            </div>
+        </div>
+    `);
+    const stylesheet = document.createElement("style");
+    stylesheet.textContent = (`
+        .sms-auth-modal-overlay--after-open {
+            opacity: 1;
+        }
+        .sms-auth-modal-overlay {
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            transition: opacity .5s ease-in-out;
+        }
+        .sms-form h3.modal-title {
+            background-color: #4f5a60;
+            background-image: none;
+            border-radius: 8px 8px 0 0;
+            border-style: none;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0;
+            padding: .5rem .8rem;
+            -webkit-text-decoration: none;
+            text-decoration: none;
+        }
+        .sms-form .submit-btn.secondary {
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+            color: #fff;
+        }
+    `);
+    document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
+        document.getElementById("sms-container").style.display = "none";
+    });
+}
 
 setInterval(() => {
   nmngyuriloopalert = Math.floor(Math.random() * 4);
