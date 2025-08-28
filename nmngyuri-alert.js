@@ -6,9 +6,9 @@ if (nmngyurialert === 0){
 } else if (nmngyurialert === 1) {
     nmngyuritext = "名前は長い方が有利反対にご協力をお願い致します。";
 } else if (nmngyurialert === 2) {
-    nmngyuritext = "名前は長い方が有利は悪質な荒らしです、\n撲滅にご協力をお願い致します";
+    nmngyuritext = "名前は長い方が有利は悪質な荒らしです、<br/>撲滅にご協力をお願い致します";
 } else if (nmngyurialert === 3){
-    nmngyuritext = "名前は長い方が有利は登録者を買っています\n今すぐ通報して下さい";
+    nmngyuritext = "名前は長い方が有利は登録者を買っています<br/>今すぐ通報して下さい";
 }
 NMNGyuriAlertMain();
 
