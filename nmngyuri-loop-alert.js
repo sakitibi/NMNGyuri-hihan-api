@@ -15,11 +15,11 @@ NMNGyuriAlertMain();
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay", "sms-auth-modal-overlay--after-open");
-    document.body.appendChild(container);
     Object.assign(container.style, {
         backgroundColor: "rgba(0, 0, 0, 0.3)",
         zIndex: 999999
     });
+    document.body.appendChild(container);
     container.innerHTML = (`
         <div id="sms-container" style="vertical-align: middle; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); z-index: 999999; max-width: 500px; box-sizing: border-box; width: 90%; background: rgb(255, 255, 255); padding: 0px; border: none; border-radius: 8px; box-shadow: rgb(0, 0, 0) 0px 0px 10px; text-align: left;">
             <div class="sms-form">
@@ -59,6 +59,14 @@ function NMNGyuriAlertMain(){
             background-color: #5cb85c;
             border-color: #4cae4c;
             color: #fff;
+        }
+        .sms-form .button-container .submit-btn, .sms-form button.close-modal {
+            border-radius: 5px;
+            border-style: solid;
+            font-size: 1rem;
+            margin-bottom: .5rem;
+            padding: 4px 10px;
+            width: 16rem;
         }
     `);
     document.head.appendChild(stylesheet);
