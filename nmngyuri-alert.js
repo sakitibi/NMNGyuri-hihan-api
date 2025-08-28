@@ -61,6 +61,7 @@ function NMNGyuriAlertMain(){
             color: #fff;
         }
     `);
+    document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
         document.getElementById("sms-container").style.display = "none";
     });
