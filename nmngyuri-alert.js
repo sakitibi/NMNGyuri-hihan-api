@@ -18,10 +18,21 @@ if(shouldShowAlert()){
     NMNGyuriAlertMain();
 }
 
+function getCookieValue(name) {
+  const cookies = document.cookie.split('; ');
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split('=');
+    if (key === name) {
+      return value;
+    }
+  }
+  return false; // 該当するCookieがない場合
+}
+
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay");
-    if(document.cookie.nmngAgree !== true && shouldShowAlert()){
+    if(getCookieValue('nmngAgree') && shouldShowAlert()){
         container.classList.add("sms-auth-modal-overlay--after-open");
     }
     Object.assign(container.style, {
