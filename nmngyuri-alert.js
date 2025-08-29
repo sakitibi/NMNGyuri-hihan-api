@@ -12,7 +12,7 @@ if (nmngyurialert === 0){
 }
 function shouldShowAlert() {
     const last = parseInt(document.cookie.lastNMNGshown || "0", 10);
-    return (Date.now() - last) > 600000;
+    return (Date.now() - last) > 600000 || typeof last === 'undefined';
 }
 if(shouldShowAlert()){
     NMNGyuriAlertMain();
