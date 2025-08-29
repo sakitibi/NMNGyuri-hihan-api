@@ -34,7 +34,9 @@ function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay");
     if(Boolean(getCookieValue('nmngAgree')) && shouldShowAlert()){
-        container.classList.add("sms-auth-modal-overlay--after-open");
+        setTimeout(() => {
+            container.classList.add("sms-auth-modal-overlay--after-open");
+        }, 2000);
     }
     Object.assign(container.style, {
         backgroundColor: "rgba(0, 0, 0, 0.3)",
@@ -42,7 +44,7 @@ function NMNGyuriAlertMain(){
     });
     document.body.appendChild(container);
     container.innerHTML = (`
-        <div id="sms-container" style="vertical-align: middle; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); z-index: 999999; max-width: 500px; box-sizing: border-box; width: 90%; background: rgb(255, 255, 255); padding: 0px; border: none; border-radius: 8px; box-shadow: rgb(0, 0, 0) 0px 0px 10px; text-align: left;">
+        <div id="sms-container">
             <div class="sms-form">
                 <h3 class="modal-title">${nmngyuritext}</h3>
                 <div class="button-container">
