@@ -39,10 +39,6 @@ function NMNGyuriAlertMain(){
             container.classList.add("sms-auth-modal-overlay--after-open");
         }, 2000);
     }
-    Object.assign(container.style, {
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
-        zIndex: 999999
-    });
     document.body.appendChild(container);
     container.innerHTML = (`
         <div id="sms-container">
