@@ -100,6 +100,6 @@ function NMNGyuriAlertMain(){
     document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
         container.remove();
-        document.cookie = `nmngAgree=true; lastNMNGshown=${Date.now()}; max-age=2147483647;`;
+        document.cookie = `nmngAgree=true; lastNMNGshown=${String(Date.now())}; max-age=2147483647;`;
     });
 }
