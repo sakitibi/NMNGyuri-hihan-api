@@ -52,51 +52,9 @@ function NMNGyuriAlertMain(){
             </div>
         </div>
     `);
-    const stylesheet = document.createElement("style");
-    stylesheet.textContent = (`
-        .sms-auth-modal-overlay--after-open {
-            opacity: 1 !important;
-        }
-        .sms-auth-modal-overlay {
-            bottom: 0;
-            left: 0;
-            opacity: 0;
-            position: fixed;
-            right: 0;
-            top: 0;
-            transition: opacity .5s ease-in-out;
-        }
-        .sms-form h3.modal-title {
-            background-color: #4f5a60;
-            background-image: none;
-            border-radius: 8px 8px 0 0;
-            border-style: none;
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 400;
-            margin: 0;
-            padding: .5rem .8rem;
-            -webkit-text-decoration: none;
-            text-decoration: none;
-        }
-        .sms-form .submit-btn.secondary {
-            background-color: #5cb85c;
-            border-color: #4cae4c;
-            color: #fff;
-        }
-        .sms-form .button-container .submit-btn, .sms-form button.close-modal {
-            border-radius: 5px;
-            border-style: solid;
-            font-size: 1rem;
-            margin-bottom: .5rem;
-            padding: 4px 10px;
-            width: 16rem;
-            cursor: pointer;
-        }
-        .sms-form .button-container {
-            text-align: center;
-        }
-    `);
+    const stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = "https://sakitibi.github.io/NMNGyuri-hihan-api/css/nmngyuri-hihan-alert.css";
     document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
         container.remove();
