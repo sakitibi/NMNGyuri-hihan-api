@@ -21,7 +21,7 @@ if(shouldShowAlert()){
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay");
-    if(document.cookie.nmngAgree === true){
+    if(document.cookie.nmngAgree !== true && shouldShowAlert()){
         container.classList.add("sms-auth-modal-overlay--after-open");
     }
     Object.assign(container.style, {
