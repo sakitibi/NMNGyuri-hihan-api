@@ -11,7 +11,7 @@ if (nmngyurialert === 0){
     nmngyuritext = "名前は長い方が有利は登録者を買っています<br/>今すぐ通報して下さい";
 }
 function shouldShowAlert() {
-    const last = parseInt(document.cookie.lastNMNGshown || "0", 10);
+    const last = parseInt(getCookieValue('lastNMNGshown') || "0", 10);
     return (Date.now() - last) > 600000 || typeof last === 'undefined';
 }
 document.addEventListener('DOMContentLoaded', function(){
