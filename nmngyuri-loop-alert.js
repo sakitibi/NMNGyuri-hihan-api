@@ -23,8 +23,10 @@ function NMNGyuriAlertMain(){
     container.innerHTML = (`
         <div id="sms-container" style="vertical-align: middle; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); z-index: 999999; max-width: 500px; box-sizing: border-box; width: 90%; background: rgb(255, 255, 255); padding: 0px; border: none; border-radius: 8px; box-shadow: rgb(0, 0, 0) 0px 0px 10px; text-align: left;">
             <div class="sms-form">
-                <h3 class="modal-title"></h3>
-                <button class="submit-btn secondary">同意する</button>
+                <h3 class="modal-title">${nmngyuritext}</h3>
+                <div class="button-container">
+                    <button class="submit-btn secondary">同意する</button>
+                </div>
             </div>
         </div>
     `);
@@ -67,6 +69,9 @@ function NMNGyuriAlertMain(){
             margin-bottom: .5rem;
             padding: 4px 10px;
             width: 16rem;
+        }
+        .sms-form .button-container {
+            text-align: center;
         }
     `);
     document.head.appendChild(stylesheet);
