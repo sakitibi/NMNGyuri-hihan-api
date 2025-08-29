@@ -24,9 +24,11 @@ function shouldShowAlert() {
     const last = parseInt(document.cookie.lastNMNGshown || "0", 10);
     return (Date.now() - last) > 600000 || typeof last === 'undefined';
 }
-if(shouldShowAlert()){
-    NMNGyuriAlertMain();
-}
+document.addEventListener('DOMContentLoaded', function(){
+    if(shouldShowAlert()){
+        NMNGyuriAlertMain();
+    }
+});
 
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
