@@ -20,7 +20,10 @@ if(shouldShowAlert()){
 
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
-    container.classList.add("sms-auth-modal-overlay", "sms-auth-modal-overlay--after-open");
+    container.classList.add("sms-auth-modal-overlay");
+    if(document.cookie.nmngAgree === true){
+        container.classList.add("sms-auth-modal-overlay--after-open");
+    }
     Object.assign(container.style, {
         backgroundColor: "rgba(0, 0, 0, 0.3)",
         zIndex: 999999
