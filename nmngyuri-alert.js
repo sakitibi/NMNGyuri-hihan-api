@@ -34,7 +34,7 @@ function getCookieValue(name) {
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay");
-    if(Boolean(getCookieValue('nmngAgree')) && shouldShowAlert()){
+    if(!Boolean(getCookieValue('nmngAgree')) || shouldShowAlert()){
         setTimeout(() => {
             container.classList.add("sms-auth-modal-overlay--after-open");
         }, 2000);
