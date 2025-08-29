@@ -21,7 +21,7 @@ function getCookieValue(name) {
   return false; // 該当するCookieがない場合
 }
 function shouldShowAlert() {
-    const last = parseInt(getCookieValue('lastNMNGshown') || "0", 10);
+    const last = parseInt(localStorage.getItem("lastNMNGshown") || "0", 10);
     return (Date.now() - last) > 600000 || typeof last === 'undefined';
 }
 document.addEventListener('DOMContentLoaded', function(){
