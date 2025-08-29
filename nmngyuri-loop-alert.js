@@ -33,7 +33,7 @@ function NMNGyuriAlertMain(){
     const stylesheet = document.createElement("style");
     stylesheet.textContent = (`
         .sms-auth-modal-overlay--after-open {
-            opacity: 1;
+            opacity: 1 !important;
         }
         .sms-auth-modal-overlay {
             bottom: 0;
@@ -69,6 +69,7 @@ function NMNGyuriAlertMain(){
             margin-bottom: .5rem;
             padding: 4px 10px;
             width: 16rem;
+            cursor: pointer;
         }
         .sms-form .button-container {
             text-align: center;
@@ -76,7 +77,7 @@ function NMNGyuriAlertMain(){
     `);
     document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
-        document.getElementById("sms-container").style.display = "none";
+        container.remove();
     });
 }
 
