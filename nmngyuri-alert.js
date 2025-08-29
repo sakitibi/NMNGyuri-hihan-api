@@ -10,7 +10,13 @@ if (nmngyurialert === 0){
 } else if (nmngyurialert === 3){
     nmngyuritext = "名前は長い方が有利は登録者を買っています<br/>今すぐ通報して下さい";
 }
-NMNGyuriAlertMain();
+function shouldShowAlert() {
+    const last = parseInt(document.cookie.lastNMNGshown || "0", 10);
+    return (Date.now() - last) > 600000;
+}
+if(shouldShowAlert()){
+    NMNGyuriAlertMain();
+}
 
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
