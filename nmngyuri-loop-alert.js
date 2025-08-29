@@ -10,6 +10,16 @@ if (nmngyurialert === 0){
 } else if (nmngyurialert === 3){
     nmngyuritext = "名前は長い方が有利は登録者を買っています<br/>今すぐ通報して下さい";
 }
+function getCookieValue(name) {
+  const cookies = document.cookie.split('; ');
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split('=');
+    if (key === name) {
+      return value;
+    }
+  }
+  return false; // 該当するCookieがない場合
+}
 function shouldShowAlert() {
     const last = parseInt(document.cookie.lastNMNGshown || "0", 10);
     return (Date.now() - last) > 600000 || typeof last === 'undefined';
