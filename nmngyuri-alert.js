@@ -11,7 +11,7 @@ if (nmngyurialert === 0){
     nmngyuritext = "名前は長い方が有利は登録者を買っています<br/>今すぐ通報して下さい";
 }
 function shouldShowAlert() {
-    const last = parseInt(getCookieValue('lastNMNGshown') || "0", 10);
+    const last = parseInt(localStorage.getItem("lastNMNGshown") || "0", 10);
     return (Date.now() - last) > 600000 || typeof last === 'undefined';
 }
 document.addEventListener('DOMContentLoaded', function(){
@@ -100,6 +100,7 @@ function NMNGyuriAlertMain(){
     document.head.appendChild(stylesheet);
     document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
         container.remove();
-        document.cookie = `nmngAgree=true; lastNMNGshown=${String(Date.now())}; max-age=2147483647;`;
+        localStorage.setItem("lastNMNGshown", Date.now());
+        document.cookie = `nmngAgree=true; max-age=2147483647;`;
     });
 }
