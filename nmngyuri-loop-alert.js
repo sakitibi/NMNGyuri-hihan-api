@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function NMNGyuriAlertMain(){
     const container = document.createElement("div");
     container.classList.add("sms-auth-modal-overlay");
-    if(getCookieValue('nmngAgree') && shouldShowAlert()){
+    if(Boolean(getCookieValue('nmngAgree')) && shouldShowAlert()){
         container.classList.add("sms-auth-modal-overlay--after-open");
     }
     Object.assign(container.style, {
