@@ -32,7 +32,7 @@ function getCookieValue(name) {
 }
 
 function NMNGyuriAlertMain(){
-    if(!document.querySelector("sms-auth-modal-overlay")){
+    if(!document.querySelector(".sms-auth-modal-overlay")){
         const container = document.createElement("div");
         container.classList.add("sms-auth-modal-overlay");
         if(!Boolean(getCookieValue('nmngAgree')) || shouldShowAlert()){
