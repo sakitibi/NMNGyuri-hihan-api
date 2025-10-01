@@ -31,33 +31,35 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function NMNGyuriAlertMain(){
-    const container = document.createElement("div");
-    container.classList.add("sms-auth-modal-overlay");
-    if(!Boolean(getCookieValue('nmngAgree')) || shouldShowAlert()){
-        setTimeout(() => {
-            container.classList.add("sms-auth-modal-overlay--after-open");
-        }, 2000);
-    }
-    document.body.appendChild(container);
-    container.innerHTML = (`
-        <div id="sms-container">
-            <div class="sms-form">
-                <h3 class="modal-title">${nmngyuritext}</h3>
-                <div class="button-container">
-                    <button class="submit-btn secondary">同意する</button>
+    if(document.querySelector(".sms-auth-modal-overlay")){
+        const container = document.createElement("div");
+        container.classList.add("sms-auth-modal-overlay");
+        if(!Boolean(getCookieValue('nmngAgree')) || shouldShowAlert()){
+            setTimeout(() => {
+                container.classList.add("sms-auth-modal-overlay--after-open");
+            }, 2000);
+        }
+        document.body.appendChild(container);
+        container.innerHTML = (`
+            <div id="sms-container">
+                <div class="sms-form">
+                    <h3 class="modal-title">${nmngyuritext}</h3>
+                    <div class="button-container">
+                        <button class="submit-btn secondary">同意する</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `);
-    const stylesheet = document.createElement("link");
-    stylesheet.rel = "stylesheet";
-    stylesheet.href = "https://sakitibi.github.io/NMNGyuri-hihan-api/css/nmngyuri-hihan-alert.css";
-    document.head.appendChild(stylesheet);
-    document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
-        container.remove();
-        localStorage.setItem("lastNMNGshown", Date.now());
-        document.cookie = `nmngAgree=true; max-age=2147483647;`;
-    });
+        `);
+        const stylesheet = document.createElement("link");
+        stylesheet.rel = "stylesheet";
+        stylesheet.href = "https://sakitibi.github.io/NMNGyuri-hihan-api/css/nmngyuri-hihan-alert.css";
+        document.head.appendChild(stylesheet);
+        document.querySelector(".submit-btn.secondary").addEventListener('click', function(){
+            container.remove();
+            localStorage.setItem("lastNMNGshown", Date.now());
+            document.cookie = `nmngAgree=true; max-age=2147483647;`;
+        });
+    }
 }
 
 setInterval(() => {
