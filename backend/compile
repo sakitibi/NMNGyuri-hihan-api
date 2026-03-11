@@ -1,0 +1,2 @@
+# 残念ながらMacOS armのみ対応
+GOOS=darwin GOARCH=arm64 go build -o AntiNMNGyuriAI
