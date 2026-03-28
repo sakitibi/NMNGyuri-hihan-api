@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "名前は長い方が有利対策拡張機能",
+    "version": "1.0",
+    "description": "名前は長い方が有利対策拡張機能です",
+    "permissions": ["storage"],
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["rules.js", "content.js"],
+            "css": ["style.css"],
+            "run_at": "document_idle"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+.blocked-description {
+    filter: blur(6px);
+    pointer-events: none;
+}
+
+.warning-box {
+    background: red;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

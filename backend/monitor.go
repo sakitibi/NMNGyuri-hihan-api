@@ -160,7 +160,7 @@ func checkScreen(client *gosseract.Client) (string, string) {
 			fmt.Printf("[Debug BLUE] OCR Result: %s\n", txtBlue)
 		}
 
-		blueKeywords := []string{"結果", "純興", "菊果", "隠す", "結界", "関す"}
+		blueKeywords := []string{"実績", "実績", "実績", "表示", "実績", "表示"}
 		for _, k := range blueKeywords {
 			if strings.Contains(txtBlue, k) {
 				return "BLUE", txtBlue
