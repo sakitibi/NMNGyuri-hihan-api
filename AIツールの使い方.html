@@ -13,23 +13,25 @@
 <body>
     <h1>AIツールの使い方</h1>
     <ol>
-        <li>まずユーザーディレクトリに新しいディレクトリを作成して</li>
+        <li>まず<a href="https://www.python.org/ftp/python/3.14.3/python-3.14.3-macos11.pkg">python 3.14</a>をインストールします</li>
+        <li>次にユーザーディレクトリに新しいディレクトリを作成して</li>
         <li>cd 新しいディレクトリのパス を実行する</li>
+        <li>次に python3 -m venv venv を実行する</li>
+        <li>source venv/bin/activate を実行してvenvを有効化する</li>
         <li>次に<a href="https://github.com/sakitibi/NMNGyuri-hihan-api.git">ここ</a>に移動します</li>
         <li>CodeメニューからDownload ZIP をクリックします</li>
         <li>次にzipファイルを解凍してNMNGyuri-hihan-api-mainっていうディレクトリが出て来たら</li>
         <li>その中のbackendディレクトリ以外を全て削除します</li>
         <li>次にbackendディレクトリの中身をgit clone を実行したディレクトリに移動する</li>
-        <li>次に中身の.mp3以外を全て削除する</li>
-        <li>次に<a href="https://github.com/sakitibi/NMNGyuri-hihan-api/releases/download/2.0.90/AntiNMNGyuriAI">ここ</a>から実行ファイルをダウンロードする</li>
         <li>次に rm -fr ./NMNGyuri-hihan-api-main する</li>
-        <li>次にbrew install tesseract leptonica する</li>
-        <li>最後に./AntiNMNGyuriAI したら起動成功!</li>
+        <li>次にpip install opencv-python numpy PIL easyocr する</li>
+        <li>最後にpython3 main.py したら起動成功!</li>
     </ol>
     <p>2回目以降は</p>
     <ol>
         <li>cd 新しいディレクトリのパス を実行する</li>
-        <li>./AntiNMNGyuriAI</li>
+        <li>source venv/bin/activate</li>
+        <li>python3 main.py</li>
     </ol>
     <p>だけでOK!</p>
 </body>
