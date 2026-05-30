@@ -1,10 +1,12 @@
-const originalEval = window.eval;
+(function(){
+    const originalEval = window.eval;
 
-// eval を上書き
-window.eval = function(str) {
-    console.log("Intercepted eval code:\n", str);
-    return originalEval(str);
-};
+    // eval を上書き
+    window.eval = function(str) {
+        console.log("Intercepted eval code:\n", str);
+        return originalEval(str);
+    };
+})();
 
 function log(...args) {
     console.log("[YT-Blocker]", ...args);
