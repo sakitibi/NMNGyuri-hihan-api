@@ -10,7 +10,6 @@ def start_monitoring():
             
             # monitor.pyに画面チェックを任せる
             detect_type, detected_text = check_screen()
-
             if detect_type == "RED":
                 log_msg = f"荒らし検知!! ({detected_text})"
                 print(f"\033[91m\033[1m[{timestamp}] {log_msg}\033[0m")

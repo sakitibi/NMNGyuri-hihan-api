@@ -39,7 +39,7 @@ def check_screen():
     shot_red: Image = ImageGrab.grab(bbox=BBOX_RED)
     proc_red = preprocess_red(shot_red)
     txt_red = "".join([res[1] for res in reader.readtext(proc_red)]).strip()
-    
+    print(txt_red)
     if any(k in txt_red for k in ["バン", "追い出", "されました", "により"]) and len(txt_red) >= 4:
         return "RED", txt_red
 
@@ -48,7 +48,7 @@ def check_screen():
     proc_blue: Image = preprocess_blue(shot_blue)
     txt_blue: str = "".join([res[1] for res in reader.readtext(proc_blue)]).strip()
     blue_keywords: list[str] = [
-        "結果", "純興", "菊果", "隠す", "結界", "関す",
+        "実績", "純興", "菊果", "表示", "結界", "関す",
         "を関", "火す", "を火", "果を", "を隠", "筒黒",
         "口す"
     ]
